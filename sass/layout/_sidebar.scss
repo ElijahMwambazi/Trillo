@@ -11,11 +11,24 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
     }
 
     &::before {
@@ -47,12 +60,21 @@
     color: var(--color-grey-light-1);
     text-decoration: none;
     text-transform: uppercase;
-    display: block;
     padding: 1.5rem 3rem;
     display: flex;
     align-items: center;
     position: relative;
     z-index: 1;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex-direction: column;
+      padding: 1rem;
+    }
   }
 
   &__icon {
@@ -60,6 +82,13 @@
     width: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
@@ -68,4 +97,8 @@
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
